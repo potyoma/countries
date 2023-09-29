@@ -1,5 +1,22 @@
-import styles from "./page.module.css";
+import { getCountryList } from "@/lib/data/get-country-list";
+import s from "./page.module.css";
+import CountryCard from "@/components/organisms/country-card/contry-card";
 
-export default function Home() {
-  return <main className={styles.main}></main>;
+export default async function Home() {
+  const countries = await getCountryList();
+
+  return (
+    <main className={s.main}>
+      <div className={s.cards}>
+        {countries?.map(c => (
+          <CountryCard
+            key={c.name}
+            country={c.name}
+            properties={c.properties}
+            image={c.image}
+          />
+        ))}
+      </div>
+    </main>
+  );
 }
