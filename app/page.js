@@ -1,6 +1,6 @@
 import { getCountryList } from "@/lib/data/get-country-list";
 import s from "./page.module.css";
-import CountryCard from "@/components/organisms/country-card/contry-card";
+import CountryCard from "@/components/organisms/country-card";
 
 export default async function Home() {
   const countries = await getCountryList();

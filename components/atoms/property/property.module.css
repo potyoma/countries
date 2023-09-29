@@ -1,8 +1,15 @@
+.property {
+  margin: 1rem 0;
+}
+
 .name {
   font-weight: 600;
+  font-size: 1.2rem;
   color: var(--text-color);
 }
 
 .value {
   color: var(--text-secondary);
+  margin: 0 0.4rem;
+  font-size: 1.2rem;
 }
