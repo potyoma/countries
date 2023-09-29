@@ -2,7 +2,6 @@
 
 import { Button } from "@/components/atoms/button";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import clsx from "clsx";
 import { useState, useEffect } from "react";
 import { getInitialColorMode } from "@/lib/helpers/getInitialColorMode";
 import { capitalizeFirst } from "@/lib/utils/capitalize-first";
