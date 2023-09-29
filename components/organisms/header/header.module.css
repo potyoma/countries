@@ -1,7 +1,7 @@
 .header {
   background: var(--component-bg-color);
   padding: 1.5rem 0.3rem;
-  box-shadow: 0 0 50px 15px var(--component-bg-color);
+  box-shadow: var(--shadow);
   display: flex;
   justify-content: space-between;
   align-items: center;
