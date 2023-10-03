@@ -14,7 +14,3 @@
 .shadow {
   box-shadow: var(--shadow);
 }
-
-.icon {
-  margin: 0.3rem;
-}

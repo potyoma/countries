@@ -2,12 +2,7 @@
 
 import clsx from "clsx";
 import s from "./button.module.css";
-
-function ButtonIcon({ icon }) {
-  if (!icon) return null;
-
-  return <span className={s.icon}>{icon}</span>;
-}
+import Icon from "../icon";
 
 export default function Button({
   children,
@@ -24,9 +19,9 @@ export default function Button({
       className={clsx(className, s.button, !transparent && s.shadow)}
       {...buttonProps}
     >
-      {iconPosition === "left" && <ButtonIcon icon={icon} />}
-      {children}
-      {iconPosition === "right" && <ButtonIcon icon={icon} />}
+      <Icon iconPosition={iconPosition} icon={icon}>
+        {children}
+      </Icon>
     </button>
   );
 }
