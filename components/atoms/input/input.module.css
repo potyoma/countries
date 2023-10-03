@@ -1,0 +1,32 @@
+.container {
+  position: relative;
+}
+
+.input {
+  border: none;
+  background: var(--component-bg-color);
+  border-radius: 10px;
+  padding: 1rem 0.2rem 1rem 3rem;
+  color: var(--text-color);
+  font-size: 1.2rem;
+}
+
+.input::placeholder {
+  color: var(--text-color);
+  opacity: 1; /* Firefox */
+}
+
+.input::-ms-input-placeholder {
+  /* Edge 12 -18 */
+  color: var(--text-color);
+}
+
+.icon {
+  color: var(--text-color);
+}
+
+.iconLeft {
+  position: absolute;
+  left: 1rem;
+  top: 25%;
+}
