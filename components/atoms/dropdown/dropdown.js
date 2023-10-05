@@ -9,14 +9,17 @@ export default function Dropdown({ options, label, onSelect, selected }) {
 
   const containerRef = useRef();
 
-  const toggle = useCallback(() => setActive(curr => !curr), []);
+  const toggle = useCallback(
+    value => setActive(curr => (value === undefined ? !curr : value)),
+    []
+  );
 
   const handleSelect = opt => {
     onSelect?.(opt);
     toggle();
   };
 
-  useClickOutside(containerRef, toggle);
+  useClickOutside(containerRef, () => toggle(false));
 
   return (
     <div className={s.container} ref={containerRef}>
