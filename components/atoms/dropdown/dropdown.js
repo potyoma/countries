@@ -1,20 +1,25 @@
 import s from "./dropdown.module.css";
 import { Button } from "../button";
-import { useState } from "react";
+import { useCallback, useRef, useState } from "react";
 import clsx from "clsx";
+import { useClickOutside } from "@/hooks";
 
 export default function Dropdown({ options, label, onSelect, selected }) {
   const [active, setActive] = useState();
 
-  const toggle = () => setActive(curr => !curr);
+  const containerRef = useRef();
+
+  const toggle = useCallback(() => setActive(curr => !curr), []);
 
   const handleSelect = opt => {
     onSelect?.(opt);
     toggle();
   };
 
+  useClickOutside(containerRef, toggle);
+
   return (
-    <div className={s.container}>
+    <div className={s.container} ref={containerRef}>
       <Button
         className={s.button}
         role="combobox"

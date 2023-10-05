@@ -2,7 +2,6 @@
   color: var(--text-color);
   background-color: var(--component-bg-color);
   border-radius: 10px;
-  padding: 0.5rem 1rem;
   cursor: pointer;
   position: relative;
 }
@@ -10,6 +9,9 @@
 .button {
   font-weight: 800;
   font-size: 1rem;
+  width: 100%;
+  text-align: start !important;
+  padding: 0.8rem 0.7rem !important;
 }
 
 .dropdownContainer {

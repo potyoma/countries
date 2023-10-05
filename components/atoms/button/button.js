@@ -16,7 +16,7 @@ export default function Button({
   return (
     <button
       onClick={onClick}
-      className={clsx(className, s.button, !transparent && s.shadow)}
+      className={clsx(s.button, !transparent && s.shadow, className)}
       {...buttonProps}
     >
       <Icon iconPosition={iconPosition} icon={icon}>
