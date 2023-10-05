@@ -137,10 +137,12 @@ ol,
 ul {
   list-style: none;
 }
+
 blockquote,
 q {
   quotes: none;
 }
+
 blockquote:before,
 blockquote:after,
 q:before,
@@ -148,7 +150,29 @@ q:after {
   content: "";
   content: none;
 }
+
 table {
   border-collapse: collapse;
   border-spacing: 0;
+}
+
+/* Scrollbar */
+body {
+  --sb-size: 7px;
+
+  scrollbar-color: var(--component-bg-color) var(--bg-color);
+}
+
+body::-webkit-scrollbar {
+  width: var(--sb-size);
+}
+
+body::-webkit-scrollbar-track {
+  background: var(--component-bg-color);
+  border-radius: var(--sb-size);
+}
+
+body::-webkit-scrollbar-thumb {
+  background: var(--component-bg-color);
+  border-radius: var(--sb-size);
 }
