@@ -8,7 +8,7 @@ const IconComponent = ({ icon, className, ...iconProps }) => (
 );
 
 export default function Icon({ icon, children, iconPosition, ...iconProps }) {
-  if (!icon) return null;
+  if (!icon) return children;
 
   if (!children) return <IconComponent icon={icon} {...iconProps} />;
 
