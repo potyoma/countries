@@ -10,9 +10,9 @@ export default function CountryCard({ country, image, properties }) {
       <Image
         width="0"
         height="0"
-        src={image}
+        src={image.src}
         layout="responsive"
-        alt={`${country} flag`}
+        alt={image.alt}
         className={s.image}
       />
       <div className={s.info}>
