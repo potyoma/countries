@@ -6,9 +6,9 @@ export default function Properties({ properties }) {
 
   return (
     <ul className={s.list}>
-      {Object.entries(properties.data).map(([key, value]) => (
-        <li key={properties.country + key}>
-          <Property name={key} value={value} />
+      {properties.map(({ name, value }) => (
+        <li key={properties.country + name}>
+          <Property name={name} value={value} />
         </li>
       ))}
     </ul>
