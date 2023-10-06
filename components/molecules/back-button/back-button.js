@@ -5,7 +5,7 @@ import { Button } from "@/components/atoms/button";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeftLong } from "@fortawesome/free-solid-svg-icons";
 
-export default function BackButton() {
+export default function BackButton(buttopProps) {
   const router = useRouter();
 
   const handleClick = () => router.back();
@@ -14,6 +14,7 @@ export default function BackButton() {
     <Button
       onClick={handleClick}
       icon={<FontAwesomeIcon icon={faArrowLeftLong} />}
+      {...buttopProps}
     >
       Back
     </Button>
