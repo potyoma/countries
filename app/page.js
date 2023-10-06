@@ -3,8 +3,8 @@ import s from "./page.module.css";
 import CountryCard from "@/components/organisms/country-card";
 import SearchForm from "@/components/organisms/search-form";
 
-export default async function Home() {
-  const countries = await getCountryList();
+export default async function Home({ searchParams }) {
+  const countries = await getCountryList(searchParams);
 
   return (
     <main className={s.main}>

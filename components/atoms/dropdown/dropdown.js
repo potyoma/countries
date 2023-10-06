@@ -5,7 +5,7 @@ import clsx from "clsx";
 import { useClickOutside } from "@/hooks";
 
 export default function Dropdown({ options, label, onSelect, selected }) {
-  const [active, setActive] = useState();
+  const [active, setActive] = useState(false);
 
   const containerRef = useRef();
 
@@ -28,7 +28,7 @@ export default function Dropdown({ options, label, onSelect, selected }) {
         role="combobox"
         aria-labelledby="select button"
         aria-haspopup="listbox"
-        aria-expanded="false"
+        aria-expanded={active.toString()}
         aria-controls="select-dropdown"
         onClick={toggle}
       >

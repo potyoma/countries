@@ -11,7 +11,6 @@ export default function CountryCard({ country, image, properties }) {
         width="0"
         height="0"
         src={image.src}
-        layout="responsive"
         alt={image.alt}
         className={s.image}
       />
