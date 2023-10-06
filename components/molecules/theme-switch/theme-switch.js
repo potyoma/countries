@@ -3,7 +3,7 @@
 import { Button } from "@/components/atoms/button";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState, useEffect } from "react";
-import { getInitialColorMode } from "@/lib/helpers/getInitialColorMode";
+import { getInitialColorMode } from "@/lib/helpers";
 import { capitalizeFirst } from "@/lib/utils/capitalize-first";
 import { faMoon as RegularMoon } from "@fortawesome/free-regular-svg-icons";
 import { faMoon as SolidMoon } from "@fortawesome/free-solid-svg-icons";
