@@ -2,7 +2,7 @@ import { useCallback, useEffect } from "react";
 
 const EVENT_TYPE = "click";
 
-export default function useClickOutside(ref, callback) {
+export default function useClickOutside(ref, callback, shouldListen = true) {
   const handleClickOutside = useCallback(
     event => {
       event.type === EVENT_TYPE &&
@@ -14,8 +14,12 @@ export default function useClickOutside(ref, callback) {
   );
 
   useEffect(() => {
-    setTimeout(() => document.addEventListener(EVENT_TYPE, handleClickOutside));
+    if (shouldListen) {
+      setTimeout(() =>
+        document.addEventListener(EVENT_TYPE, handleClickOutside)
+      );
 
-    return () => document.removeEventListener(EVENT_TYPE, handleClickOutside);
-  }, [handleClickOutside]);
+      return () => document.removeEventListener(EVENT_TYPE, handleClickOutside);
+    }
+  }, [handleClickOutside, shouldListen]);
 }

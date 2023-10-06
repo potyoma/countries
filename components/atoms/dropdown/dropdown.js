@@ -19,7 +19,7 @@ export default function Dropdown({ options, label, onSelect, selected }) {
     toggle();
   };
 
-  useClickOutside(containerRef, () => toggle(false));
+  useClickOutside(containerRef, () => toggle(false), active);
 
   return (
     <div className={s.container} ref={containerRef}>
