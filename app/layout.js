@@ -8,7 +8,7 @@ const nunitoSans = Nunito_Sans({
 });
 
 export const metadata = {
-  title: "Contries",
+  title: "Countries",
   description: "Country library",
 };
 
