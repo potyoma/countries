@@ -5,10 +5,12 @@
   border-radius: 5px;
   border: none;
   text-align: center;
+  text-decoration: none;
 }
 
 .button:hover {
   cursor: pointer;
+  transform: scale(1.2);
 }
 
 .shadow {

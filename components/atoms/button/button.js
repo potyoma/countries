@@ -3,6 +3,7 @@
 import clsx from "clsx";
 import s from "./button.module.css";
 import Icon from "../icon";
+import Link from "next/link";
 
 export default function Button({
   children,
@@ -11,17 +12,21 @@ export default function Button({
   iconPosition = "left",
   transparent,
   className,
+  link,
   ...buttonProps
 }) {
+  const Component = link && !onClick ? Link : "button";
+
   return (
-    <button
+    <Component
       onClick={onClick}
       className={clsx(s.button, !transparent && s.shadow, className)}
+      href={link}
       {...buttonProps}
     >
       <Icon iconPosition={iconPosition} icon={icon}>
         {children}
       </Icon>
-    </button>
+    </Component>
   );
 }
