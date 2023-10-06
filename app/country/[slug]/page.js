@@ -47,7 +47,9 @@ export default async function Page({ params }) {
           <Properties
             properties={selectProperties(properties, ADDITIONAL_PROPERTIES)}
           />
-          <ListProperty name="Borders" values={country.borders} />
+          {country.borders?.length > 0 && (
+            <ListProperty name="Borders" values={country.borders} />
+          )}
         </div>
       </div>
     </div>
