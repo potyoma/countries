@@ -29,27 +29,29 @@ export default async function Page({ params }) {
   return (
     <div className={s.container}>
       <BackButton className={s.button} />
-      <Image
-        src={country.flags.svg}
-        width="0"
-        height="0"
-        className={s.flag}
-        alt={country.flags.alt}
-      />
-      <div className={s.info}>
-        <Heading className={s.heading} level="h2">
-          {country.name.common}
-        </Heading>
-        <div className={s.properties}>
-          <Properties
-            properties={selectProperties(properties, MAIN_PROPERTIES)}
-          />
-          <Properties
-            properties={selectProperties(properties, ADDITIONAL_PROPERTIES)}
-          />
-          {country.borders?.length > 0 && (
-            <ListProperty name="Borders" values={country.borders} />
-          )}
+      <div className={s.content}>
+        <Image
+          src={country.flags.svg}
+          width="0"
+          height="0"
+          className={s.flag}
+          alt={country.flags.alt}
+        />
+        <div className={s.info}>
+          <Heading className={s.heading} level="h2">
+            {country.name.common}
+          </Heading>
+          <div className={s.properties}>
+            <Properties
+              properties={selectProperties(properties, MAIN_PROPERTIES)}
+            />
+            <Properties
+              properties={selectProperties(properties, ADDITIONAL_PROPERTIES)}
+            />
+            {country.borders?.length > 0 && (
+              <ListProperty name="Borders" values={country.borders} />
+            )}
+          </div>
         </div>
       </div>
     </div>

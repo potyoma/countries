@@ -29,6 +29,7 @@ export default function SearchForm({}) {
         placeholder="Search for a country..."
         onChange={({ target: { value } }) => setSearchQuery(value)}
       />
+
       <Dropdown
         options={[
           { name: "Africa", value: "africa" },
