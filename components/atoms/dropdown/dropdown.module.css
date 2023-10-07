@@ -52,4 +52,5 @@
 
 .dropdownItem:hover {
   background-color: var(--bg-color);
+  transform: scale(1) !important;
 }
