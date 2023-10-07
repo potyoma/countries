@@ -20,7 +20,12 @@ export default function Button({
   return (
     <Component
       onClick={onClick}
-      className={clsx(s.button, !transparent && s.shadow, className)}
+      className={clsx(
+        s.button,
+        !transparent && s.shadow,
+        transparent && s.transparent,
+        className
+      )}
       href={link}
       {...buttonProps}
     >

@@ -21,6 +21,12 @@ export default function Dropdown({ options, label, onSelect, selected }) {
 
   useClickOutside(containerRef, () => toggle(false), active);
 
+  const handleSubmit = ev => {
+    console.log(ev);
+    if (ev.key === "Enter") return;
+    return ev.type !== "submit" && toggle();
+  };
+
   return (
     <div className={s.container} ref={containerRef}>
       <Button
@@ -30,7 +36,7 @@ export default function Dropdown({ options, label, onSelect, selected }) {
         aria-haspopup="listbox"
         aria-expanded={active.toString()}
         aria-controls="select-dropdown"
-        onClick={toggle}
+        onClick={handleSubmit}
       >
         {selected?.name || label}
       </Button>

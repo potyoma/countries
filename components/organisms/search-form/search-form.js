@@ -8,6 +8,7 @@ import Dropdown from "@/components/atoms/dropdown";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import Form from "@/components/atoms/form";
+import { Button } from "@/components/atoms/button";
 
 export default function SearchForm({}) {
   const [filter, setFilter] = useState();
@@ -25,11 +26,14 @@ export default function SearchForm({}) {
   return (
     <Form onSubmit={handleSubmit} className={s.form}>
       <Input
-        icon={<FontAwesomeIcon icon={faMagnifyingGlass} />}
+        icon={
+          <Button className={s.submitButton} transparent type="submit">
+            <FontAwesomeIcon icon={faMagnifyingGlass} />
+          </Button>
+        }
         placeholder="Search for a country..."
         onChange={({ target: { value } }) => setSearchQuery(value)}
       />
-
       <Dropdown
         options={[
           { name: "Africa", value: "africa" },

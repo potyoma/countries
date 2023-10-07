@@ -16,3 +16,7 @@
 .shadow {
   box-shadow: var(--shadow);
 }
+
+.transparent {
+  background: none;
+}
